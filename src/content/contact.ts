@@ -119,18 +119,6 @@ export const page: PageContent = {
             "Проформа-ДА в течение 24 часов после выхода, итоговый расчёт за 5 рабочих дней.",
           ),
         },
-        {
-          title: L("კარიერა და პრესა", "Careers & press", "Карьера и пресса"),
-          link: {
-            href: `mailto:${CONTACT.careersEmail}`,
-            label: L(CONTACT.careersEmail, CONTACT.careersEmail, CONTACT.careersEmail),
-          },
-          note: L(
-            "რეზიუმე ელფოსტით; რეკრუტინგული სააგენტოების გარეშე.",
-            "CVs accepted by email; no agency recruiters, please.",
-            "Резюме по электронной почте; без кадровых агентств, пожалуйста.",
-          ),
-        },
       ],
     },
     {

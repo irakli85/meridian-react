@@ -5,7 +5,6 @@ export const SITE_URL = "https://meridian-georgia.example";
 export const CONTACT = {
   operationsEmail: "operations@meridian-georgia.example",
   accountsEmail: "accounts@meridian-georgia.example",
-  careersEmail: "careers@meridian-georgia.example",
   dutyPhoneDisplay: "+995 322 00 01 12",
   dutyPhoneHref: "tel:+995322000112",
   offices: {

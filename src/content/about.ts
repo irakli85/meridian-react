@@ -17,7 +17,7 @@ export const page: PageContent = {
   blocks: [
     {
       kind: "hero",
-      img: "assets/aerial.jpg",
+      img: "assets/green.jpg",
       crumbs: [
         { href: "index.html", label: L("მთავარი", "Home", "Главная") },
         { href: "about.html", label: L("ჩვენ შესახებ", "About", "О нас") },

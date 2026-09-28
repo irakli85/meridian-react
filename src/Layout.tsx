@@ -8,18 +8,12 @@ export type PageKey =
   | "index"
   | "about"
   | "services"
-  | "sustainability"
-  | "news"
-  | "careers"
   | "contact";
 
 const NAV: { key: PageKey; href: string; label: Text }[] = [
   { key: "index", href: "index.html", label: { ka: "მთავარი", en: "Home", ru: "Главная" } },
   { key: "about", href: "about.html", label: { ka: "ჩვენ შესახებ", en: "About", ru: "О нас" } },
   { key: "services", href: "services.html", label: { ka: "სერვისები", en: "Services", ru: "Услуги" } },
-  { key: "sustainability", href: "sustainability.html", label: { ka: "მდგრადობა", en: "Sustainability", ru: "Устойчивость" } },
-  { key: "news", href: "news.html", label: { ka: "სიახლეები", en: "News", ru: "Новости" } },
-  { key: "careers", href: "careers.html", label: { ka: "კარიერა", en: "Careers", ru: "Карьера" } },
   { key: "contact", href: "contact.html", label: { ka: "კონტაქტი", en: "Contact", ru: "Контакты" } },
 ];
 
@@ -28,9 +22,10 @@ const MENU: Text = { ka: "მენიუ", en: "Menu", ru: "Меню" };
 const CLOSE_MENU: Text = { ka: "მენიუს დახურვა", en: "Close menu", ru: "Закрыть меню" };
 const MAIN_NAV: Text = { ka: "მთავარი ნავიგაცია", en: "Main navigation", ru: "Основная навигация" };
 const LANG_GROUP: Text = { ka: "ენის არჩევა", en: "Language", ru: "Язык" };
+const GET_IN_TOUCH: Text = { ka: "დაგვიკავშირდით", en: "Get in touch", ru: "Связаться" };
 const LOGO_TITLE = "Meridian Georgia";
 
-const LANG_LABEL: Record<Lang, string> = { ka: "GE", en: "EN", ru: "РУС" };
+const LANG_LABEL: Record<Lang, string> = { ka: "GE", en: "EN", ru: "RU" };
 const LANG_NAME: Record<Lang, Text> = {
   ka: { ka: "ქართული", en: "Georgian", ru: "Грузинский" },
   en: { ka: "ინგლისური", en: "English", ru: "Английский" },
@@ -52,9 +47,6 @@ const FOOTER: {
       title: { ka: "კომპანია", en: "Company", ru: "Компания" },
       links: [
         { id: "about", href: "about.html", label: { ka: "ჩვენ შესახებ", en: "About", ru: "О нас" } },
-        { id: "sustainability", href: "sustainability.html", label: { ka: "მდგრადობა", en: "Sustainability", ru: "Устойчивость" } },
-        { id: "careers", href: "careers.html", label: { ka: "კარიერა", en: "Careers", ru: "Карьера" } },
-        { id: "news", href: "news.html", label: { ka: "სიახლეები", en: "News", ru: "Новости" } },
       ],
     },
     {
@@ -131,6 +123,10 @@ export function Layout({ current, children }: { current: PageKey; children: Reac
               </a>
             ))}
           </nav>
+          <a className="header-cta" href="contact.html">
+            <span className="header-cta-text">{t(GET_IN_TOUCH)}</span>
+            <span className="header-cta-hover" aria-hidden="true" />
+          </a>
           <div className="lang-switch" role="group" aria-label={t(LANG_GROUP)}>
             {LANGS.map((code) => (
               <button

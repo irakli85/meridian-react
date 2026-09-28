@@ -46,6 +46,10 @@ ul,ol{margin:0;padding:0}
 nav.primary{display:flex;align-items:center;gap:1.6rem}
 nav.primary a{font-size:.9rem;text-decoration:none;color:var(--slate);padding:.35rem 0;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
 nav.primary a:hover,nav.primary a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}
+.header-cta{z-index:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#e53312;color:#181818;border-radius:6px;font-family:Arial,sans-serif;font-size:10.4px;font-weight:500;letter-spacing:1px;line-height:15.6px;padding:.56rem 1.05rem;text-decoration:none;text-transform:uppercase;white-space:nowrap;transition:all .25s ease}
+.header-cta-text{z-index:2;position:relative;color:#fff;font-size:10px;font-weight:900;letter-spacing:2px;line-height:15px}
+.header-cta-hover{z-index:1;position:absolute;left:-16px;bottom:-400%;width:125%;height:400%;border-radius:100%;background:#263286;transform:translateY(100%);transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.header-cta:hover .header-cta-hover{transform:translateY(-125%)}
 .lang-switch{display:flex;align-items:center;border:1px solid var(--hair);background:var(--white)}
 .lang-switch button{font:inherit;font-size:.74rem;letter-spacing:.06em;background:none;border:0;border-right:1px solid var(--hair);color:var(--slate);padding:.42rem .62rem;cursor:pointer;min-width:3rem;text-align:center}
 .lang-switch button:last-child{border-right:0}
@@ -199,12 +203,14 @@ html[lang="ka"] .foot h4{text-transform:none;letter-spacing:.02em;font-size:.92r
   .f-row,.foot-grid{grid-template-columns:1fr}
   .masthead-inner{gap:.2rem}
   .logo-mark{width:42px;height:38px}
+  .header-cta{font-size:.68rem;padding:.42rem .52rem}
+  .header-cta-text{font-size:9px;letter-spacing:1.5px}
   .logo-copy{display:none}
   .lang-switch button{min-width:2rem;padding-inline:.25rem}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .btn,.card,nav.primary a{transition:none}
+  .btn,.card,nav.primary a,.header-cta{transition:none}
   .logo-mark,.logo-title span,.logo-tagline{animation:none;opacity:1;transform:none}
 }
 

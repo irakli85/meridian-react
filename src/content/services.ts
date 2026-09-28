@@ -297,15 +297,6 @@ export const page: PageContent = {
           href: "contact.html",
           label: L("დაიწყეთ ნომინაცია", "Start a nomination", "Начать номинацию"),
         },
-        {
-          href: "sustainability.html",
-          ghost: true,
-          label: L(
-            "როგორ ვმუშაობთ პასუხისმგებლიანად",
-            "How we operate responsibly",
-            "Как мы работаем ответственно",
-          ),
-        },
       ],
     },
   ],

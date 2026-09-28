@@ -4,9 +4,6 @@ const PAGES = [
   ["index", "home"],
   ["about", "about"],
   ["services", "services"],
-  ["sustainability", "sustainability"],
-  ["news", "news"],
-  ["careers", "careers"],
   ["contact", "contact"],
 ];
 

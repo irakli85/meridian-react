@@ -6,9 +6,6 @@ const pages = [
   "index",
   "about",
   "services",
-  "sustainability",
-  "news",
-  "careers",
   "contact",
 ];
 

@@ -4,8 +4,5 @@
   <url><loc>https://meridian-georgia.example/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://meridian-georgia.example/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://meridian-georgia.example/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://meridian-georgia.example/sustainability.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://meridian-georgia.example/news.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://meridian-georgia.example/careers.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meridian-georgia.example/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

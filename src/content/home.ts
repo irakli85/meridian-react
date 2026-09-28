@@ -227,66 +227,6 @@ export const page: PageContent = {
       ],
     },
     {
-      kind: "posts",
-      kicker: { ka: "უახლესი სიახლეები", en: "Latest news", ru: "Последние новости" },
-      title: {
-        ka: "ნავმიდან და მორიგის მაგიდიდან",
-        en: "From the quay and the duty desk",
-        ru: "С причала и дежурного стола",
-      },
-      more: {
-        href: "news.html",
-        label: { ka: "ყველა სიახლე →", en: "All news →", ru: "Все новости →" },
-      },
-      items: [
-        {
-          img: "assets/green.jpg",
-          alt: "გემი ტერმინალთან მიერთებული სანაპირო ელექტრომომარაგების კაბელით",
-          date: "12 Sep 2026",
-          title: {
-            ka: "პოთში სანაპირო ელექტრომომარაგების კვლევა დაიწყო",
-            en: "Shore-power pilot study starts at Poti",
-            ru: "В Поти началось исследование shore power",
-          },
-          body: {
-            ka: "სამი ტერმინალი, ერთი გაზომვის გეგმა და ზამთრის ფანჯარა პირველი საცდელი დგომისთვის.",
-            en: "Three terminals, one measurement plan and a winter window for the first trial berth.",
-            ru: "Три терминала, один план измерений и зимнее окно для первой пробной швартовки.",
-          },
-        },
-        {
-          img: "assets/crew.jpg",
-          alt: "ოფიცრები სიმულატორის ოთახში ინსტრუქტორის გვერდით",
-          date: "28 Aug 2026",
-          title: {
-            ka: "ეკიპაჟის ცვლის პროტოკოლმა დრო 6 საათამდე შეამცირა",
-            en: "Crew transit protocol cuts change time to 6 hours",
-            ru: "Протокол транзита сократил смену экипажа до 6 часов",
-          },
-          body: {
-            ka: "დოკუმენტების წინასწარმა გაფორმებამ და ტრანსფერის ერთმა ფანჯარამ აეროპორტის ჯაჭვიდან ორი ეტაპი მოხსრა.",
-            en: "Document pre-clearance and a single transfer window removed two steps from the airport chain.",
-            ru: "Предварительное оформление документов и одно трансферное окно убрали два этапа из цепочки аэропорта.",
-          },
-        },
-        {
-          img: "assets/aerial.jpg",
-          alt: "ჰაერიდან გადაღებული პორტის შესასვლელი გემითა და ბუქსირით",
-          date: "05 Aug 2026",
-          title: {
-            ka: "პოთის რეიდისთვის ზამთრის დრაუფტის რჩევა გამოქვეყნდა",
-            en: "Winter draft advisory published for Poti roads",
-            ru: "Опубликовано зимнее предупреждение по осадке на рейде Поти",
-          },
-          body: {
-            ka: "ქარიშხლის სეზონი ცვლის ანკორეზე დგომის გეგმას: რომელი ნავმისადგომი რჩება ღია და როდის იზღუდება ბუქსირები.",
-            en: "Squall season changes the anchorage plan: which berths stay open and when tugs are limited.",
-            ru: "Штормовой сезон меняет план якорной стоянки: какие причалы остаются открытыми и когда ограничены буксиры.",
-          },
-        },
-      ],
-    },
-    {
       kind: "split",
       tone: "sea",
       tight: true,
