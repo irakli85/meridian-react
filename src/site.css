@@ -88,8 +88,11 @@ nav.primary a:hover,nav.primary a[aria-current="page"]{color:var(--ink);border-c
 html[lang="ka"] .kicker{letter-spacing:.05em;text-transform:none;font-size:.86rem}
 .page-hero h1{max-width:20ch;margin-bottom:1rem;text-wrap:balance}
 .page-hero .dek{max-width:56ch;color:#e2e5e6;font-size:clamp(1rem,1.1vw,1.12rem)}
-.crumbs{font-size:.76rem;letter-spacing:.05em;color:#d3dde2;margin-bottom:1.4rem}
+/* Solid, not translucent: #e53312 tops out near 4:1 over any see-through chip, so AA needs an opaque plate. */
+.crumbs{font-size:.76rem;letter-spacing:.05em;color:#d3dde2;margin-bottom:1.4rem;display:inline-block;background:#050a0d;padding:.42rem .78rem;border-radius:.45rem}
 .crumbs a{text-decoration:none}
+/* The last crumb is the current page; matches the header CTA's vermilion. */
+.crumbs a:last-of-type{color:#e53312;font-size:.92rem}
 .crumbs a:hover{color:var(--white)}
 .crumbs span{opacity:.5;margin-inline:.4rem}
 
