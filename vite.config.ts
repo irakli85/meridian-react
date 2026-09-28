@@ -18,7 +18,7 @@ export default defineConfig({
   base: "./",
   plugins: [react()],
   build: {
-    outDir: "build",
+    outDir: "dist",
     sourcemap: false,
     assetsInlineLimit: 0,
     rollupOptions: {

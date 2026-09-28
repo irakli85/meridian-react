@@ -5,7 +5,7 @@ Vite + React 18 multi-page site (7 static pages, 3 languages: ka/en/ru).
 ## Scripts
 
 - `npm run dev` — dev server (`http://127.0.0.1:5183`)
-- `npm run build` — typecheck + production build into `build/`
+- `npm run build` — typecheck + production build into `dist/`
 - `npm run preview` — preview the production build
 - `npm run typecheck` — `tsc --noEmit`
 
