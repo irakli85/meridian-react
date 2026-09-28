@@ -37,7 +37,8 @@ export const page: PageContent = {
       actions: [
         {
           href: "contact.html",
-          label: { ka: "მოითხოვეთ სავარაუდო ღირებულება", en: "Request a call", ru: "Запросить расчёт" },
+          dialog: true,
+          label: { ka: "დაგვიკავშირდით", en: "Get in touch", ru: "Связаться" },
         },
         {
           href: "services.html",
@@ -251,6 +252,7 @@ export const page: PageContent = {
       actions: [
         {
           href: "contact.html",
+          dialog: true,
           label: { ka: "საკონტაქტო ფორმა", en: "Contact form", ru: "Форма связи" },
         },
         {

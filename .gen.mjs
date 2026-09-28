@@ -43,9 +43,6 @@ for (const [page] of PAGES) {
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
 <meta name="twitter:image" content="${SITE}/assets/hero.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;500;600&family=Noto+Serif+Georgian:wght@500&display=swap" rel="stylesheet">
 <link rel="icon" href="${icon}">
 <script>(function(){try{var l=new URLSearchParams(location.search).get("lang");if(l==="ka"||l==="en"||l==="ru")document.documentElement.lang=l;}catch(e){}})();</script>
 <script type="module" src="/src/entries/${page}.tsx"></script>

@@ -1,9 +1,11 @@
 import type { CSSProperties } from "react";
 import { useLang } from "../i18n";
+import { useContactDialog } from "../hooks";
 import type { Card, Link, TableData } from "../content/types";
 
 export function Actions({ actions }: { actions: Link[] }) {
   const { t } = useLang();
+  const openContact = useContactDialog();
   return (
     <div className="btn-row">
       {actions.map((action) => (
@@ -12,6 +14,16 @@ export function Actions({ actions }: { actions: Link[] }) {
           className={"btn" + (action.ghost ? " ghost" : "")}
           href={action.href}
           dir={action.dir}
+          aria-haspopup={action.dialog ? "dialog" : undefined}
+          onClick={
+            action.dialog
+              ? (event) => {
+                  if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey) return;
+                  event.preventDefault();
+                  openContact(event.currentTarget);
+                }
+              : undefined
+          }
         >
           {t(action.label)}
         </a>

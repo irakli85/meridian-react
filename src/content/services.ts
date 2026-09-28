@@ -295,6 +295,7 @@ export const page: PageContent = {
       actions: [
         {
           href: "contact.html",
+          dialog: true,
           label: L("დაიწყეთ ნომინაცია", "Start a nomination", "Начать номинацию"),
         },
       ],

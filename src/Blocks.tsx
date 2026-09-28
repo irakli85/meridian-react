@@ -376,7 +376,7 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
 
           case "form":
             return (
-              <section className="block paper2" key={key}>
+              <section className="block paper2" id="request" key={key}>
                 <div className="wrap split">
                   <div>
                     <p className="kicker">{t(block.kicker)}</p>

@@ -1,8 +1,16 @@
-import { useState, type ReactNode } from "react";
+import { lazy, Suspense, useCallback, useRef, useState, type MouseEvent, type ReactNode } from "react";
 import { LANGS, useLang, type Lang, type Text } from "./i18n";
-import { useEscapeKey } from "./hooks";
+import { ContactDialogContext, useEscapeKey } from "./hooks";
 import { CONTACT } from "./site";
 import type { Link } from "./content/types";
+
+const ContactDialog = lazy(() =>
+  import("./components/ContactDialog").then((module) => ({ default: module.ContactDialog })),
+);
+
+function preloadDialog() {
+  void import("./components/ContactDialog");
+}
 
 export type PageKey =
   | "index"
@@ -77,7 +85,29 @@ const FOOTER: {
 export function Layout({ current, children }: { current: PageKey; children: ReactNode }) {
   const { lang, setLang, t } = useLang();
   const [open, setOpen] = useState(false);
+  const [dialog, setDialog] = useState(false);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const onContact = current === "contact";
   useEscapeKey(open, () => setOpen(false));
+
+  const openDialog = useCallback((trigger?: HTMLElement | null) => {
+    triggerRef.current = trigger ?? null;
+    setOpen(false);
+    setDialog(true);
+  }, []);
+
+  const onCta = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey) return;
+    event.preventDefault();
+    openDialog(event.currentTarget);
+  };
+
+  const closeDialog = () => {
+    setDialog(false);
+    const trigger = triggerRef.current;
+    triggerRef.current = null;
+    if (trigger?.offsetParent) trigger.focus();
+  };
 
   return (
     <>
@@ -123,7 +153,13 @@ export function Layout({ current, children }: { current: PageKey; children: Reac
               </a>
             ))}
           </nav>
-          <a className="header-cta" href="contact.html">
+          <a
+            className="header-cta"
+            href={onContact ? "#request" : "contact.html"}
+            aria-haspopup={onContact ? undefined : "dialog"}
+            onClick={onContact ? undefined : onCta}
+            onPointerEnter={onContact ? undefined : preloadDialog}
+          >
             <span className="header-cta-text">{t(GET_IN_TOUCH)}</span>
             <span className="header-cta-hover" aria-hidden="true" />
           </a>
@@ -144,7 +180,9 @@ export function Layout({ current, children }: { current: PageKey; children: Reac
         </div>
       </header>
 
-      <main id="main">{children}</main>
+      <ContactDialogContext.Provider value={openDialog}>
+        <main id="main">{children}</main>
+      </ContactDialogContext.Provider>
 
       <footer className="foot">
         <div className="wrap">
@@ -155,7 +193,7 @@ export function Layout({ current, children }: { current: PageKey; children: Reac
             </div>
             {FOOTER.groups.map((group) => (
               <nav key={t(group.title)} aria-label={t(group.title)}>
-                <h4>{t(group.title)}</h4>
+                <h2>{t(group.title)}</h2>
                 <ul>
                   {group.links.map((link) => (
                     <li key={link.id}>
@@ -173,6 +211,12 @@ export function Layout({ current, children }: { current: PageKey; children: Reac
           </div>
         </div>
       </footer>
+
+      {dialog ? (
+        <Suspense fallback={null}>
+          <ContactDialog onClose={closeDialog} />
+        </Suspense>
+      ) : null}
     </>
   );
 }

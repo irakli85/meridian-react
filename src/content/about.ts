@@ -1,3 +1,4 @@
+import { CONTACT } from "../site";
 import { L } from "./text";
 import type { PageContent } from "./types";
 
@@ -220,6 +221,36 @@ export const page: PageContent = {
             "Every nomination screened before acceptance.",
             "Каждая номинация проверяется до принятия.",
           ),
+        },
+      ],
+    },
+    {
+      kind: "cta",
+      title: L(
+        "ისაუბრეთ იმ ადამიანებთან, ვინც ვიზიტს უძღვება",
+        "Talk to the people who run the call",
+        "Поговорите с теми, кто ведёт заход",
+      ),
+      dek: L(
+        "ნომინაციის მიღების შემდეგ ერთი კონკრეტული აგენტი თან ახლავს თქვენს გემს პირველი შეხვედრიდან გაცლამდე. გამოიყენეთ მორიგეობის ხაზი, ან გამოგზავნეთ გემი, პორტი და ETA.",
+        "Once a nomination is accepted, one named agent stays with your vessel from first contact to departure. Use the duty line, or send the vessel, port and ETA.",
+        "После принятия номинации один именованный агент сопровождает ваше судно от первого контакта до отхода. Позвоните на дежурную линию или пришлите судно, порт и ETA.",
+      ),
+      actions: [
+        {
+          href: "contact.html",
+          dialog: true,
+          label: L("დაგვიკავშირდით", "Get in touch", "Связаться"),
+        },
+        {
+          href: CONTACT.dutyPhoneHref,
+          ghost: true,
+          dir: "ltr",
+          label: {
+            ka: CONTACT.dutyPhoneDisplay,
+            en: CONTACT.dutyPhoneDisplay,
+            ru: CONTACT.dutyPhoneDisplay,
+          },
         },
       ],
     },

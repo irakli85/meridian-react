@@ -1,6 +1,6 @@
 import type { Text } from "../i18n";
 
-export type Link = { href: string; label: Text; ghost?: boolean; dir?: string };
+export type Link = { href: string; label: Text; ghost?: boolean; dir?: string; dialog?: boolean };
 
 export type Card = {
   idx?: Text;
