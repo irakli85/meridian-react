@@ -17,7 +17,7 @@ export const page: PageContent = {
   blocks: [
     {
       kind: "hero",
-      img: "assets/hero-poster.jpg",
+      img: "assets/hero-video-first-frame.jpg",
       video: "assets/hero.mp4",
       kicker: {
         ka: "პოთი · ბათუმი · კულევი · სუფსა",
